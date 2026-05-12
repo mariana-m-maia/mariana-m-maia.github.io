@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio | Bioinformática</title>
+    <title>Mariana Maia | Cientista & Bioinformata</title>
     <style>
-        /* Estilo Minimalista e Acadêmico */
+        /* Estilo para gerar o fundo abstrato de moléculas */
         body {
             font-family: "Times New Roman", Times, serif;
-            background-color: #fcfcfc;
             color: #1a1a1a;
             line-height: 1.6;
             margin: 0;
@@ -16,53 +15,76 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #fcfcfc; /* Cor de base suave */
+            /* Imagem de fundo abstrata gerada com degradê e esferas moleculares */
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(162, 155, 254, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 30%, rgba(79, 172, 254, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 40% 70%, rgba(162, 155, 254, 0.08) 0%, transparent 18%),
+                radial-gradient(circle at 70% 85%, rgba(79, 172, 254, 0.08) 0%, transparent 22%),
+                /* Estrutura molecular simplificada (esferas pastel) */
+                linear-gradient(45deg, transparent 48%, rgba(79, 172, 254, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(162, 155, 254, 0.03) 50%, transparent 52%);
+            background-size: 100px 100px, 150px 150px, 200px 200px, 180px 180px, 40px 40px, 40px 40px;
+            background-repeat: repeat;
         }
 
         header {
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, #4facfe 0%, #a29bfe 100%); /* Degradê Azul e Roxo */
+            background: linear-gradient(90deg, #4facfe 0%, #a29bfe 100%);
+            position: fixed; /* Fixa a barra no topo */
+            top: 0;
+            z-index: 1000;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 750px;
             width: 90%;
-            padding: 80px 20px;
+            padding: 100px 20px 80px 20px; /* Ajuste para o header fixo */
+            /* Efeito "vidro fosco" no container para manter o texto legível sobre o fundo */
+            background-color: rgba(252, 252, 252, 0.92);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            margin-top: 20px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: normal;
             margin-bottom: 5px;
             letter-spacing: -1px;
+            color: #2c3e50;
         }
 
         .subtitle {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
             margin-bottom: 40px;
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 2px solid #a29bfe; /* Linha roxa sutil */
             padding-bottom: 10px;
             margin-top: 50px;
-            color: #4834d4; /* Roxo sutil */
+            color: #4834d4;
         }
 
         .section-content {
             margin-top: 20px;
+            text-align: justify;
         }
 
         .tag {
             background: linear-gradient(120deg, #e0f2ff 0%, #f3f0ff 100%);
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 2px 10px;
+            border-radius: 20px; /* Tag mais arredondada */
             font-size: 0.9rem;
             color: #2e51a2;
+            font-style: normal;
         }
 
         footer {
@@ -73,14 +95,15 @@
         }
 
         a {
-            color: #4834d4;
+            color: #4facfe;
             text-decoration: none;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         a:hover {
+            color: #a29bfe;
             text-decoration: underline;
-            color: #4facfe;
         }
     </style>
 </head>
@@ -89,36 +112,31 @@
     <header></header>
 
     <div class="container">
-        <h1>[Seu Nome Aqui]</h1>
-        <p class="subtitle">Graduação & Bioinformática</p>
+        <h1>Mariana Rodrigues Miranda Stanzyk da Maia</h1>
+        <p class="subtitle">Biomédica & Aspirante a Bioinformata</p>
 
-        <!-- CAPÍTULO 1 -->
         <h2>01. Formação Acadêmica</h2>
         <div class="section-content">
-            <p>Conclusão da minha graduação em <b>[Nome do seu Curso]</b> pela [Nome da Instituição]. 
-            Durante este período, desenvolvi interesse pela intersecção entre a biologia e a tecnologia.</p>
+            <p>Graduada em <b>Biomedicina</b> (2025), trilhei minha jornada acadêmica com foco na pesquisa científica. Durante dois anos, realizei Iniciação Científica na <b>Fiocruz</b>, atuando no Laboratório de Regulação da Expressão Gênica. Minha experiência abrange áreas fundamentais como Biologia Molecular e Microbiologia de Fungos.</p>
         </div>
 
-        <!-- CAPÍTULO 2 -->
-        <h2>02. Bioinformática</h2>
+        <h2>02. Transição & Bioinformática</h2>
         <div class="section-content">
-            <p>Atualmente mergulhando no universo da <span class="tag">Bioinformática</span>. 
-            Explorando análise de dados genômicos, programação e como a computação pode acelerar descobertas biológicas.</p>
+            <p>Como uma entusiasta da ciência e da inovação, estou sempre em busca de novos conhecimentos em congressos e eventos da área. Atualmente, estou direcionando minha carreira para a <span class="tag">Bioinformática</span>, realizando a formação com Thiago Vidotto para dominar as ferramentas computacionais aplicadas à biologia.</p>
         </div>
 
-        <!-- CAPÍTULO 3 -->
-        <h2>03. Contato</h2>
+        <h2>03. Vamos nos conectar?</h2>
         <div class="section-content">
-            <p>Sinta-se à vontade para acompanhar minha jornada ou entrar em contato:</p>
+            <p>Sinta-se à vontade para acompanhar meus projetos ou trocar uma ideia:</p>
             <p>
-                <a href="mailto:seuemail@exemplo.com">E-mail</a> / 
-                <a href="https://linkedin.com/in/seu-user">LinkedIn</a> / 
-                <a href="https://github.com/seu-user">GitHub</a>
+                <a href="mailto:marianamirandamaia@outlook.com">E-mail</a> / 
+                <a href="https://www.linkedin.com/in/mariana-maia06" target="_blank">LinkedIn</a> / 
+                <a href="https://instagram.com/nana.rms" target="_blank">Instagram</a>
             </p>
         </div>
 
         <footer>
-            © 2024 — Feito com código e café.
+            © 2026 — Mariana Maia.
         </footer>
     </div>
 
