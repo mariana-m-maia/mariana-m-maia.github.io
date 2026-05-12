@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariana Rodrigues Miranda Stanzyk da Maia | Ciência & Bioinformática</title>
+    <title>Mariana Maia | Ciência & Bioinformática</title>
+    <!-- Fontes Premium -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --accent-blue: #4facfe;
             --accent-purple: #a29bfe;
             --text-main: #1d1d1f;
+            --text-soft: #6e6e73;
         }
 
         body {
@@ -17,8 +19,12 @@
             color: var(--text-main);
             margin: 0;
             background-color: #fff;
-            background-image: radial-gradient(at 0% 0%, rgba(162, 155, 254, 0.1) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.1) 0px, transparent 50%);
+            /* Fundo Mesh Gradient Sutil */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(162, 155, 254, 0.12) 0px, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.12) 0px, transparent 50%);
             background-attachment: fixed;
+            line-height: 1.6;
         }
 
         .container {
@@ -27,7 +33,7 @@
             padding: 80px 20px;
         }
 
-        /* Layout Profile */
+        /* Header e Perfil */
         .profile-header {
             display: flex;
             align-items: center;
@@ -40,134 +46,196 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background-color: #eee;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
         .hero-sub {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.3rem;
-            color: #6e6e73;
+            font-size: 1.4rem;
+            color: var(--text-soft);
+            margin-top: 10px;
         }
 
-        /* Seções */
+        /* Estrutura em Grid */
         .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--accent-purple);
             border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
         }
 
-        p, li {
-            font-size: 0.95rem;
-            line-height: 1.7;
+        p {
             font-weight: 300;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Badges de Habilidades */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
         }
 
         .skills-tag {
-            display: inline-block;
-            background: #f5f5f7;
-            padding: 5px 12px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.85rem;
-            margin-right: 5px;
-            margin-bottom: 10px;
             border: 1px solid #e5e5e5;
+            color: #444;
+            transition: 0.3s;
         }
 
-        .contact-info {
-            background: #fafafa;
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 20px;
+        .skills-tag:hover {
+            border-color: var(--accent-blue);
+            background: #fff;
         }
 
-        .contact-info a {
+        .learning {
+            border-style: dashed;
+            color: var(--accent-blue);
+        }
+
+        /* Lista de Eventos */
+        .event-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        /* Contato Extra Visível */
+        .contact-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            margin-top: 40px;
+        }
+
+        .contact-card a {
             color: var(--accent-blue);
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 600;
         }
 
-        /* Responsividade */
+        footer {
+            margin-top: 80px;
+            font-size: 0.8rem;
+            color: #bbb;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .profile-header { flex-direction: column; text-align: center; }
             .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="profile-header">
+        <!-- CABEÇALHO -->
+        <header class="profile-header">
             <img src="foto.jpg" alt="Mariana Maia" class="profile-pic">
             <div>
                 <h1>Mariana Rodrigues Miranda Stanzyk da Maia</h1>
                 <div class="hero-sub">Biomedicina & Bioinformática</div>
             </div>
-        </div>
+        </header>
 
         <div class="grid">
+            <!-- COLUNA ESQUERDA -->
             <div class="left-col">
                 <div class="section">
-                    <h2>Trajetória</h2>
-                    <p>Biomédica (2022-2025) com experiência de 2 anos em Iniciação Científica na <b>Fiocruz</b>. Atuei na área de Regulação da Expressão Gênica, focando em Biologia Molecular e Microbiologia de Fungos.</p>
+                    <h2>Trajetória Científica</h2>
+                    <p>
+                        Biomédica (2025) com sólida base em pesquisa experimental desenvolvida durante dois anos de Iniciação Científica na <b>Fiocruz</b>. 
+                        No Laboratório de Regulação da Expressão Gênica, foquei em Biologia Molecular e Microbiologia, trabalhando com patógenos como <i>Candida albicans</i> e a emergente <i>Candida auris</i>.
+                    </p>
                 </div>
 
                 <div class="section">
-                    <h2>Habilidades & Tech</h2>
-                    <span class="skills-tag">Linguagem R (Learning)</span>
-                    <span class="skills-tag">Biologia Molecular</span>
-                    <span class="skills-tag">Genética</span>
-                    <span class="skills-tag">Microbiologia</span>
+                    <h2>O Próximo Passo: Bioinformática</h2>
+                    <p>
+                        Movida pela vontade de explorar o "Dry Lab", estou cursando a formação do <b>Thiago Vidotto</b>. 
+                        Meu objetivo é integrar o conhecimento de bancada com a análise de dados complexos, focando em programação e genômica.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Expertise Técnica (Wet Lab)</h2>
+                    <div class="skills-container">
+                        <span class="skills-tag">Isolamento de Vesículas Extracelulares</span>
+                        <span class="skills-tag">PCR & Clonagem</span>
+                        <span class="skills-tag">Curva de Crescimento</span>
+                        <span class="skills-tag">Infeção in vivo (G. mellonella)</span>
+                    </div>
                 </div>
             </div>
 
+            <!-- COLUNA DIREITA -->
             <div class="right-col">
                 <div class="section">
-                    <h2>Eventos & Congressos</h2>
-                    <ul style="list-style: none; padding: 0;">
-                        <li>🌍 <b>ISHAM</b> – Congresso Internacional</li>
-                        <li>🧬 <b>X-Meeting</b> – Bioinformática (Em breve)</li>
-                    </ul>
+                    <h2>Tecnologias & Análise</h2>
+                    <div class="skills-container">
+                        <span class="skills-tag learning">Linguagem R (Learning)</span>
+                        <span class="skills-tag learning">Análise de RNA-seq (Learning)</span>
+                        <span class="skills-tag learning">Git & GitHub</span>
+                    </div>
                 </div>
 
                 <div class="section">
-                    <h2>Educação Atual</h2>
-                    <p>Formação em Bioinformática — <i>Thiago Vidotto</i></p>
+                    <h2>Congressos & Networking</h2>
+                    <div class="event-item">
+                        <b>ISHAM</b><br>
+                        <small>Congresso Internacional de Micologia</small>
+                    </div>
+                    <div class="event-item" style="border-color: var(--accent-purple);">
+                        <b>X-Meeting</b><br>
+                        <small>Bioinformática (Coming Soon)</small>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="contact-info">
-            <h2>Contato Direto</h2>
+        <!-- CONTATOS -->
+        <div class="contact-card">
+            <h2>Vamos conversar?</h2>
             <p>📧 <b>Email:</b> marianamirandamaia@outlook.com</p>
             <p>🔗 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/mariana-maia06" target="_blank">mariana-maia06</a></p>
             <p>📸 <b>Instagram:</b> <a href="https://instagram.com/nana.rms" target="_blank">@nana.rms</a></p>
         </div>
 
-        <footer style="margin-top: 60px; font-size: 0.7rem; color: #ccc;">
-            CURITIBA, BRASIL / 2026
+        <footer>
+            CURITIBA, PR • 2026
         </footer>
     </div>
 
