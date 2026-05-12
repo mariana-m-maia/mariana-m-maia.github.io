@@ -3,178 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariana Maia | Ciência & Dados</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Mariana Maia | Ciência & Bioinformática</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #4facfe;
-            --primary-purple: #a29bfe;
-            --text-dark: #1d1d1f;
-            --text-light: #6e6e73;
+            --accent-blue: #4facfe;
+            --accent-purple: #a29bfe;
+            --text-main: #1d1d1f;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            /* Fundo Mesh Gradient: Abstrato, orgânico e moderno */
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(162, 155, 254, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(79, 172, 254, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(162, 155, 254, 0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(79, 172, 254, 0.1) 0px, transparent 50%);
+            background-color: #fff;
+            background-image: radial-gradient(at 0% 0%, rgba(162, 155, 254, 0.1) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.1) 0px, transparent 50%);
             background-attachment: fixed;
-            display: flex;
-            justify-content: center;
         }
 
         .container {
-            max-width: 800px;
-            width: 85%;
-            padding: 120px 0;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Layout Profile */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-weight: 700;
+            font-size: 2.8rem;
             margin: 0;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
+            line-height: 1.2;
         }
 
         .hero-sub {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.4rem;
-            color: var(--text-light);
-            margin-top: 15px;
-            margin-bottom: 60px;
+            font-size: 1.3rem;
+            color: #6e6e73;
         }
 
-        .content-grid {
+        /* Seções */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
 
         .section {
-            border-left: 1px solid #e5e5e5;
-            padding-left: 30px;
-            transition: border-color 0.4s;
-        }
-
-        .section:hover {
-            border-left: 1px solid var(--primary-purple);
+            margin-bottom: 40px;
         }
 
         h2 {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--primary-purple);
+            color: var(--accent-purple);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
             margin-bottom: 20px;
         }
 
-        p {
-            font-size: 1.05rem;
-            line-height: 1.8;
+        p, li {
+            font-size: 0.95rem;
+            line-height: 1.7;
             font-weight: 300;
-            color: #333;
         }
 
-        b {
-            font-weight: 400;
-            color: #000;
+        .skills-tag {
+            display: inline-block;
+            background: #f5f5f7;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #e5e5e5;
         }
 
-        .bio-tag {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            border-bottom: 1px solid var(--primary-blue);
+        .contact-info {
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
         }
 
-        .links {
-            margin-top: 40px;
-            display: flex;
-            gap: 25px;
-        }
-
-        .links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
+        .contact-info a {
+            color: var(--accent-blue);
             text-decoration: none;
-            position: relative;
-            padding-bottom: 5px;
+            font-weight: 400;
         }
 
-        .links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary-blue);
-            transition: width 0.3s;
-        }
-
-        .links a:hover::after {
-            width: 100%;
-        }
-
-        footer {
-            margin-top: 120px;
-            font-size: 0.75rem;
-            color: #b0b0b0;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .container { padding: 60px 0; }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .profile-header { flex-direction: column; text-align: center; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>Mariana Rodrigues Miranda Stanzyk da Maia</h1>
-            <div class="hero-sub">Biomedicina e o futuro na Bioinformática</div>
-        </header>
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/180" alt="Mariana Maia" class="profile-pic">
+            <div>
+                <h1>Mariana Maia</h1>
+                <div class="hero-sub">Biomedicina & Bioinformática</div>
+            </div>
+        </div>
 
-        <div class="content-grid">
-            <div class="section">
-                <h2>01 — Percurso Científico</h2>
-                <p>
-                    Sou biomédica de formação (2025) e entusiasta da investigação científica. Minha base foi construída durante dois anos de Iniciação Científica na <b>Fiocruz</b>, no Laboratório de Regulação da Expressão Gênica, onde mergulhei na <b>Biologia Molecular</b> e na complexidade da <b>Microbiologia de Fungos</b>.
-                </p>
+        <div class="grid">
+            <div class="left-col">
+                <div class="section">
+                    <h2>Trajetória</h2>
+                    <p>Biomédica (2025) com experiência de 2 anos em Iniciação Científica na <b>Fiocruz</b>. Atuei na área de Regulação da Expressão Gênica, focando em Biologia Molecular e Microbiologia de Fungos.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Habilidades & Tech</h2>
+                    <span class="skills-tag">Linguagem R (Learning)</span>
+                    <span class="skills-tag">Biologia Molecular</span>
+                    <span class="skills-tag">Genômica</span>
+                    <span class="skills-tag">Microbiologia</span>
+                </div>
             </div>
 
-            <div class="section">
-                <h2>02 — O Próximo Passo</h2>
-                <p>
-                    Cientista por natureza e movida pelo novo, transito agora entre as bancadas e o código. Atualmente, dedico-me à <span class="bio-tag">Bioinformática</span> através da formação com Thiago Vidotto, unindo o rigor biológico à precisão analítica dos dados genômicos.
-                </p>
-            </div>
+            <div class="right-col">
+                <div class="section">
+                    <h2>Eventos & Congressos</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>🌍 <b>ISHAM</b> – Congresso Internacional</li>
+                        <li>🧬 <b>X-Meeting</b> – Bioinformática (Em breve)</li>
+                    </ul>
+                </div>
 
-            <div class="section">
-                <h2>03 — Conexões</h2>
-                <div class="links">
-                    <a href="mailto:marianamirandamaia@outlook.com">Email</a>
-                    <a href="https://www.linkedin.com/in/mariana-maia06" target="_blank">LinkedIn</a>
-                    <a href="https://instagram.com/nana.rms" target="_blank">Instagram</a>
+                <div class="section">
+                    <h2>Educação Atual</h2>
+                    <p>Formação em Bioinformática — <i>Thiago Vidotto</i></p>
                 </div>
             </div>
         </div>
 
-        <footer>
-            CURITIBA / 2026
+        <div class="contact-info">
+            <h2>Contato Direto</h2>
+            <p>📧 <b>Email:</b> marianamirandamaia@outlook.com</p>
+            <p>🔗 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/mariana-maia06" target="_blank">mariana-maia06</a></p>
+            <p>📸 <b>Instagram:</b> <a href="https://instagram.com/nana.rms" target="_blank">@nana.rms</a></p>
+        </div>
+
+        <footer style="margin-top: 60px; font-size: 0.7rem; color: #ccc;">
+            CURITIBA, BRASIL / 2026
         </footer>
     </div>
 
